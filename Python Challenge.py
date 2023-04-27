@@ -198,31 +198,99 @@ print(max(b), min(b))
 
 #https://www.acmicpc.net/problem/2562
 
+list = []
+for i in range(9):
+    a = int(input())
+    list.append(a)
+
+if a < 100:
+    print(max(list))
+    print(list.index(max(list))+1)
+else:
+    print("다시 입력하세요")
 
 
+#https://www.acmicpc.net/problem/10810
 
+a,b = map(int, input().split())
+basket = [0] * a
 
+for i in range(b):
+    c,d,e = map(int, input().split())
+    for i in range(c,d+1):
+        basket[i-1] = e
+ 
+print(basket)
 
+#https://www.acmicpc.net/problem/10813
 
+a,b = map(int, input().split())
+list = [(i+1) for i in range(a)]
 
+for i in range(b):
+    c,d = map(int, input().split())
+    temp = list[d-1]
+    list[d-1] = list[c-1]
+    list[c-1] = temp
 
+print(list)
 
+#https://www.acmicpc.net/problem/5597
 
+student = [(i+1) for i in range(30)]
 
+for i in range(28):
+    a = int(input())
+    student.remove(a)
 
+print(student)
 
+#https://www.acmicpc.net/problem/3052
 
+list = []
 
+for i in range(10):
+    a = int(input())
+    list.append(a % 42)
 
+list = set(list)
 
+print(len(list))
 
+#https://www.acmicpc.net/problem/10811
 
+a,b = map(int, input().split())
+list = [(i+1) for i in range(5)]
 
+for i in range(b):
+    c,d = map(int, input().split())
+    list = list[:c-1] + list[c-1:d][::-1] + list[d:]
 
+print(list)
 
+#https://www.acmicpc.net/problem/1546
 
+test = int(input())
+a,b,c = map(int, input().split())
+high = max(a,b,c)
 
+if high == a:
+    a = a/a*100
+    b = b/a*100
+    c = c/a*100
+    mean = (a+b+c)/3
+elif high == b:
+    a = a/b*100
+    b = b/b*100
+    c = c/b*100
+    mean = (a+b+c)/3
+else:
+    a = a/c*100
+    b = b/c*100
+    c = c/c*100
+    mean = (a+b+c)/3
 
+print(mean)
 
 
 
